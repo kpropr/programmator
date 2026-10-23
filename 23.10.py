@@ -34,7 +34,7 @@ class Actor:
                 self.__Position = {"x": tg_x, "y": tg_y}
                 self.__Acted = True
 
-    Move = move
+    
 
     def attack(self, dir):
         dirs = {
@@ -53,8 +53,6 @@ class Actor:
             if isinstance(tg, Actor):
                 tg.die()
 
-    Attack = attack
-
     def die(self):
         cur_x = self.__Position["x"]
         cur_y = self.__Position["y"]
@@ -63,8 +61,6 @@ class Actor:
                 self._map_handler._map[cur_y][cur_x] = None
         self.__Position = {"x": -1, "y": -1}
         self.__Acted = False
-
-    Die = die
 
 
 class MapHandler:
